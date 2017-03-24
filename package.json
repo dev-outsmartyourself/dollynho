@@ -1,6 +1,6 @@
 {
   "name": "dollynho",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Receive notifications on slack when errors are throw on Express",
   "main": "lib/index.js",
   "scripts": {

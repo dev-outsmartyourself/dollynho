@@ -1,0 +1,143 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/7.4.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@4.0.5
+3 info using node@v7.4.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/rafaelribeirocorreia/appsimples/backend-packages/dollyinho',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/rafaelribeirocorreia/.npm/dollyinho/0.0.1/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/rafaelribeirocorreia/.npm correctMkdir not in flight; initializing
+10 warn prepublish-on-install As of npm@5, `prepublish` scripts will run only for `npm publish`.
+11 warn prepublish-on-install (In npm@4 and previous versions, it also runs for `npm install`.)
+12 warn prepublish-on-install See the deprecation note in `npm help scripts` for more information.
+13 info lifecycle dollyinho@0.0.1~prepublish: dollyinho@0.0.1
+14 verbose lifecycle dollyinho@0.0.1~prepublish: unsafe-perm in lifecycle true
+15 verbose lifecycle dollyinho@0.0.1~prepublish: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/rafaelribeirocorreia/appsimples/backend-packages/dollyinho/node_modules/.bin:/Users/rafaelribeirocorreia/google-cloud-sdk/bin:/Users/rafaelribeirocorreia/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/rafaelribeirocorreia/.gem/ruby/2.0.0/bin
+16 verbose lifecycle dollyinho@0.0.1~prepublish: CWD: /Users/rafaelribeirocorreia/appsimples/backend-packages/dollyinho
+17 silly lifecycle dollyinho@0.0.1~prepublish: Args: [ '-c', 'npm run compile' ]
+18 silly lifecycle dollyinho@0.0.1~prepublish: Returned: code: 0  signal: null
+19 info lifecycle dollyinho@0.0.1~prepare: dollyinho@0.0.1
+20 silly lifecycle dollyinho@0.0.1~prepare: no script for prepare, continuing
+21 verbose tar pack [ '/Users/rafaelribeirocorreia/.npm/dollyinho/0.0.1/package.tgz',
+21 verbose tar pack   '/Users/rafaelribeirocorreia/appsimples/backend-packages/dollyinho' ]
+22 verbose tarball /Users/rafaelribeirocorreia/.npm/dollyinho/0.0.1/package.tgz
+23 verbose folder /Users/rafaelribeirocorreia/appsimples/backend-packages/dollyinho
+24 verbose addLocalTarball adding from inside cache /Users/rafaelribeirocorreia/.npm/dollyinho/0.0.1/package.tgz
+25 verbose correctMkdir /Users/rafaelribeirocorreia/.npm correctMkdir not in flight; initializing
+26 silly cache afterAdd dollyinho@0.0.1
+27 verbose afterAdd /Users/rafaelribeirocorreia/.npm/dollyinho/0.0.1/package/package.json not in flight; writing
+28 verbose correctMkdir /Users/rafaelribeirocorreia/.npm correctMkdir not in flight; initializing
+29 verbose afterAdd /Users/rafaelribeirocorreia/.npm/dollyinho/0.0.1/package/package.json written
+30 silly publish { name: 'dollyinho',
+30 silly publish   version: '0.0.1',
+30 silly publish   description: 'Receive notifications on slack when errors are throw on Express',
+30 silly publish   main: 'lib/index.js',
+30 silly publish   scripts:
+30 silly publish    { test: 'npm run compile && mocha --compilers js:babel-core/register',
+30 silly publish      cover: 'node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/* --compilers js:babel-core/register',
+30 silly publish      compile: 'babel --presets es2015,stage-0 -d lib/ src/',
+30 silly publish      prepublish: 'npm run compile',
+30 silly publish      'test:watch': 'npm run test -- --watch' },
+30 silly publish   repository:
+30 silly publish    { type: 'git',
+30 silly publish      url: 'git+https://github.com/rafaelcorreiapoli/dollyinho.git' },
+30 silly publish   engines: { node: '>=4.2.4' },
+30 silly publish   keywords: [ 'slack', 'crash', 'report' ],
+30 silly publish   author:
+30 silly publish    { name: 'Rafael Ribeiro',
+30 silly publish      email: 'rafael.correia.poli@gmail.com' },
+30 silly publish   license: 'ISC',
+30 silly publish   bugs: { url: 'https://github.com/rafaelcorreiapoli/dollyinho/issues' },
+30 silly publish   homepage: 'https://github.com/rafaelcorreiapoli/dollyinho#readme',
+30 silly publish   devDependencies:
+30 silly publish    { 'babel-cli': '^6.24.0',
+30 silly publish      'babel-core': '^6.24.0',
+30 silly publish      'babel-preset-es2015': '^6.24.0',
+30 silly publish      'babel-preset-stage-0': '^6.22.0',
+30 silly publish      chai: '^3.5.0',
+30 silly publish      'chai-as-promised': '^6.0.0',
+30 silly publish      coveralls: '^2.12.0',
+30 silly publish      istanbul: '^0.4.5',
+30 silly publish      mocha: '^3.2.0',
+30 silly publish      nock: '^9.0.9' },
+30 silly publish   dependencies:
+30 silly publish    { 'external-ip': '^0.2.4',
+30 silly publish      platform: '^1.3.3',
+30 silly publish      'slack-notify': '^0.1.6' },
+30 silly publish   readme: 'Dollynho, seu amiguinho\n=========\n\n\n\n## Installation\n\n  `npm install dollynho`\n\n## Usage\n\n  ```js\n  import dollynho from \'dollynho\'\n\n  const dollynhoMiddleware = dollynho({\n    webhookUrl: \'WEBHOOK_URL\',\n    shouldSendToSlack: (err) => err.statusCode === 500\n  })\n\n  //  At the end of your middleware chain\n  app.use(dollynhoMiddleware())\n  ```\n\n  You can pass additional config to dollynho to make it even better\n  ```\n  String channel,\n  String iconUrl,\n  String username,\n  Function getText,\n  ```\n\n  The function getText will receive this object on it\'s first param:\n  ```\n  {\n    packageName,\n    platform,\n    env = \'development\',\n    ip,\n    err,\n  }\n  ```\n\n  So you can build your own custom message :)\n\n## Tests\n\n  `npm test`\n',
+30 silly publish   readmeFilename: 'README.md',
+30 silly publish   gitHead: '7bc0c6d51cfd0d42328b4d4325771a4529d510eb',
+30 silly publish   _id: 'dollyinho@0.0.1',
+30 silly publish   _shasum: '229fde44761e08e8f7c2f12b17a2a36babf87372',
+30 silly publish   _from: '.' }
+31 info lifecycle dollyinho@0.0.1~prepublishOnly: dollyinho@0.0.1
+32 silly lifecycle dollyinho@0.0.1~prepublishOnly: no script for prepublishOnly, continuing
+33 verbose getPublishConfig undefined
+34 silly mapToRegistry name dollyinho
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry https://registry.npmjs.org/
+37 silly mapToRegistry data Result {
+37 silly mapToRegistry   raw: 'dollyinho',
+37 silly mapToRegistry   scope: null,
+37 silly mapToRegistry   escapedName: 'dollyinho',
+37 silly mapToRegistry   name: 'dollyinho',
+37 silly mapToRegistry   rawSpec: '',
+37 silly mapToRegistry   spec: 'latest',
+37 silly mapToRegistry   type: 'tag' }
+38 silly mapToRegistry uri https://registry.npmjs.org/dollyinho
+39 verbose publish registryBase https://registry.npmjs.org/
+40 silly publish uploading /Users/rafaelribeirocorreia/.npm/dollyinho/0.0.1/package.tgz
+41 verbose request uri https://registry.npmjs.org/dollyinho
+42 verbose request sending authorization for write operation
+43 info attempt registry request try #1 at 15:55:28
+44 verbose request using bearer token for auth
+45 verbose request id 20fef884e50a8210
+46 http request PUT https://registry.npmjs.org/dollyinho
+47 http 403 https://registry.npmjs.org/dollyinho
+48 verbose headers { 'content-type': 'application/json',
+48 verbose headers   'cache-control': 'max-age=300',
+48 verbose headers   'content-length': '103',
+48 verbose headers   'accept-ranges': 'bytes',
+48 verbose headers   date: 'Fri, 24 Mar 2017 18:54:08 GMT',
+48 verbose headers   via: '1.1 varnish',
+48 verbose headers   connection: 'keep-alive',
+48 verbose headers   'x-served-by': 'cache-gru7125-GRU',
+48 verbose headers   'x-cache': 'MISS',
+48 verbose headers   'x-cache-hits': '0',
+48 verbose headers   'x-timer': 'S1490381647.325247,VS0,VE854',
+48 verbose headers   vary: 'Accept-Encoding' }
+49 verbose request invalidating /Users/rafaelribeirocorreia/.npm/registry.npmjs.org/dollyinho on PUT
+50 error publish Failed PUT 403
+51 verbose stack Error: you do not have permission to publish "dollyinho". Are you logged in as the correct user? : dollyinho
+51 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+51 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+51 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+51 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
+51 verbose stack     at emitTwo (events.js:106:13)
+51 verbose stack     at Request.emit (events.js:191:7)
+51 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+51 verbose stack     at emitOne (events.js:96:13)
+51 verbose stack     at Request.emit (events.js:188:7)
+51 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+52 verbose statusCode 403
+53 verbose pkgid dollyinho
+54 verbose cwd /Users/rafaelribeirocorreia/appsimples/backend-packages/dollyinho
+55 error Darwin 16.4.0
+56 error argv "/usr/local/Cellar/node/7.4.0/bin/node" "/usr/local/bin/npm" "publish"
+57 error node v7.4.0
+58 error npm  v4.0.5
+59 error code E403
+60 error you do not have permission to publish "dollyinho". Are you logged in as the correct user? : dollyinho
+61 error If you need help, you may report this error at:
+61 error     <https://github.com/npm/npm/issues>
+62 verbose exit [ 1, true ]

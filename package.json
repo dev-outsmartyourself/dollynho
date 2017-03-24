@@ -1,5 +1,5 @@
 {
-  "name": "dollyinho",
+  "name": "dollynho",
   "version": "0.0.1",
   "description": "Receive notifications on slack when errors are throw on Express",
   "main": "lib/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafaelcorreiapoli/dollyinho.git"
+    "url": "git+https://github.com/rafaelcorreiapoli/dollynho.git"
   },
   "engines": {
     "node": ">=4.2.4"
@@ -25,9 +25,9 @@
   "author": "Rafael Ribeiro <rafael.correia.poli@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rafaelcorreiapoli/dollyinho/issues"
+    "url": "https://github.com/rafaelcorreiapoli/dollynho/issues"
   },
-  "homepage": "https://github.com/rafaelcorreiapoli/dollyinho#readme",
+  "homepage": "https://github.com/rafaelcorreiapoli/dollynho#readme",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",

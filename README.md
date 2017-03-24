@@ -18,7 +18,7 @@ Dollynho, seu amiguinho
   })
 
   //  At the end of your middleware chain
-  app.use(dollynhoMiddleware())
+  app.use(dollynhoMiddleware)
   ```
 
   You can pass additional config to dollynho to make it even better
